@@ -1,0 +1,4 @@
+Challenge1/.terraform/
+Challenge1/.terraform.lock.hcl
+Challenge1/terraform.tfstate
+Challenge1/terraform.tfstate.backup
