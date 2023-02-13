@@ -16,7 +16,7 @@ resource "azurerm_network_security_group" "web-nsg" {
   }
   
   security_rule {
-    name                       = "ssh-rule-1"
+    name                       = "ssh-rule-2"
     priority                   = 111
     direction                  = "Inbound"
     access                     = "Allow"
@@ -28,7 +28,7 @@ resource "azurerm_network_security_group" "web-nsg" {
   }
 
   security_rule {
-    name                       = "ssh-rule-1"
+    name                       = "ssh-rule-3"
     priority                   = 121
     direction                  = "Inbound"
     access                     = "Allow"
@@ -40,7 +40,7 @@ resource "azurerm_network_security_group" "web-nsg" {
   }
 
   security_rule {
-    name                       = "ssh-rule-2"
+    name                       = "ssh-rule-4"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Deny"
