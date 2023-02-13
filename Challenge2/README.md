@@ -25,4 +25,5 @@ _Note: we can also use az cli or python script to query instance metadata_
 5. curl -H Metadata:true "http://169.254.169.254/metadata/instance/network/interface/0/ipv4/subnet/0/address?api-version=2017-03-01&format=text"
 
 
+
 Reference: https://learn.microsoft.com/en-us/azure/virtual-machines/windows/instance-metadata-service?tabs=windows 
