@@ -26,4 +26,3 @@ key = a/b/c
 object = {“x”:{“y”:{“z”:”a”}}}
 key = x/y/z
 value = a
-![image](https://user-images.githubusercontent.com/5194637/218398266-55046a01-783d-44fe-b047-5bebe2a2e0b8.png)
