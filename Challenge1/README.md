@@ -1,22 +1,19 @@
-# Terraform code to deploy three-tier architecture on azure
-
-## What is three-tier architecture?
-Three-tier architecture is a well-established software application architecture that organizes applications into three logical and physical computing tiers: the presentation tier, or user interface; the application tier, where data is processed; and the data tier, where the data associated with the application is stored and managed.
+# Terraform code to deploy 3-tier architecture in Azure Cloud
 
 
 ## Problem Statement
 
-1. One virtual network tied in three subnets.
+1. One virtual network with three subnets - one for each tier.
 2. Each subnet will have one virtual machine.
 3. First virtual machine -> allow inbound traffic from internet only.
 4. Second virtual machine -> entertain traffic from first virtual machine only and can reply the same virtual machine again.
 5. App can connect to database and database can connect to app but database cannot connect to web.
 
-_Note: Keep main and variable files different for each component_
+_Note: It is a good practice to keep main and variable files different for each component_
 
 ## Solution
 
-### The Terraform resources will consists of following structure
+### The Terraform resources will consists of following file structure
 
 ```
 ├── main.tf                   // The primary entrypoint for terraform resources.
