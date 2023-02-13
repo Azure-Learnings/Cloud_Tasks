@@ -1,3 +1,18 @@
+terraform {
+    required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.43.0"
+    }
+  }
+    backend "azurerm" {
+        resource_group_name  = "sumit-3-tier"
+        storage_account_name = "tfstate21781"
+        container_name       = "3-tier-tfstate"
+        key                  = "terraform.tfstate"
+    }
+}
+
 provider "azurerm" {
   features {}
 }
