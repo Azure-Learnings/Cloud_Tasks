@@ -4,18 +4,23 @@
 ## Problem Statement
 
 1. One virtual network with three subnets - one for each tier.
-2. Each subnet will have one virtual machine.
-3. First virtual machine -> allow inbound traffic from internet only.
-4. Second virtual machine -> entertain traffic from first virtual machine only and can reply the same virtual machine again.
+2. Each subnet will have one linux virtual machine.
+3. First virtual machine (Web) -> allow inbound traffic from internet (Allowed Port: 22, 80, 443).
+4. Second virtual machine (App) -> entertain traffic from first virtual machine only and can reply the same virtual machine again.
 5. App can connect to database and database can connect to app but database cannot connect to web.
 
-_Note: It is a good practice to keep main and variable files different for each component_
+## Note:
+1. We can create more secure & complex architecture depending on the requirement using external & internal loadbalancer with rules and also we can use Jump-Host to access the VMs.
+2. It is a good practice to keep main and variable files different for each component
+3. If multiple team members are working with the same terraform script, it is better to use a remote backend with a locking feature (Azure Storage account or S3 bucket with DynamoDB)
+
 
 ## Solution
 
 ### The Terraform resources will consists of following file structure
 
 ```
+├── modules/                  // It contains separate modules for separate resources
 ├── main.tf                   // The primary entrypoint for terraform resources.
 ├── vars.tf                   // It contain the declarations for variables.
 ├── output.tf                 // It contain the declarations for outputs.
