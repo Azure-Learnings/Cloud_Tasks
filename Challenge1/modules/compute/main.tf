@@ -51,6 +51,8 @@ resource "azurerm_virtual_machine" "web-vm" {
     computer_name = var.web_host_name
     admin_username = var.web_username
     admin_password = var.web_os_password
+    #custom_data    = base64encode(data.template_file.linux-vm-cloud-init.rendered)
+    custom_data = filebase64("modules/compute/azure-user-data.sh")
   }
 
   os_profile_linux_config {
